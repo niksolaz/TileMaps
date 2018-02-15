@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1335CCD32035E716009300D7 /* MyTiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1335CCD22035E716009300D7 /* MyTiles.sks */; };
 		822F87111D156DCC00601A40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F87101D156DCC00601A40 /* AppDelegate.swift */; };
 		822F87131D156DCC00601A40 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 822F87121D156DCC00601A40 /* GameScene.sks */; };
 		822F87171D156DCC00601A40 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F87161D156DCC00601A40 /* GameScene.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1335CCD22035E716009300D7 /* MyTiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTiles.sks; sourceTree = "<group>"; };
 		822F870D1D156DCC00601A40 /* RDRescue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RDRescue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		822F87101D156DCC00601A40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		822F87121D156DCC00601A40 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				822F87121D156DCC00601A40 /* GameScene.sks */,
 				822F87161D156DCC00601A40 /* GameScene.swift */,
 				8279E65A1D165CE500D08CAF /* Assets.xcassets */,
+				1335CCD22035E716009300D7 /* MyTiles.sks */,
 				822F872D1D15782000601A40 /* Sounds */,
 				822F87281D156F5F00601A40 /* Storyboards */,
 				822F87221D156DCC00601A40 /* Info.plist */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				822F871C1D156DCC00601A40 /* Main.storyboard in Resources */,
+				1335CCD32035E716009300D7 /* MyTiles.sks in Resources */,
 				822F872F1D15783200601A40 /* Gas.wav in Resources */,
 				822F87131D156DCC00601A40 /* GameScene.sks in Resources */,
 				822F87311D15783600601A40 /* Duck.wav in Resources */,
