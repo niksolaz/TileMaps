@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13210D57203ACAD9004C6CCC /* ObjectTiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 13210D56203ACAD9004C6CCC /* ObjectTiles.sks */; };
 		1335CCD32035E716009300D7 /* MyTiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1335CCD22035E716009300D7 /* MyTiles.sks */; };
 		822F87111D156DCC00601A40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822F87101D156DCC00601A40 /* AppDelegate.swift */; };
 		822F87131D156DCC00601A40 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 822F87121D156DCC00601A40 /* GameScene.sks */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13210D56203ACAD9004C6CCC /* ObjectTiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ObjectTiles.sks; sourceTree = "<group>"; };
 		1335CCD22035E716009300D7 /* MyTiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTiles.sks; sourceTree = "<group>"; };
 		822F870D1D156DCC00601A40 /* RDRescue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RDRescue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		822F87101D156DCC00601A40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				822F87101D156DCC00601A40 /* AppDelegate.swift */,
 				822F87181D156DCC00601A40 /* GameViewController.swift */,
 				822F87121D156DCC00601A40 /* GameScene.sks */,
+				13210D56203ACAD9004C6CCC /* ObjectTiles.sks */,
 				822F87161D156DCC00601A40 /* GameScene.swift */,
 				8279E65A1D165CE500D08CAF /* Assets.xcassets */,
 				1335CCD22035E716009300D7 /* MyTiles.sks */,
@@ -163,6 +166,7 @@
 				822F872F1D15783200601A40 /* Gas.wav in Resources */,
 				822F87131D156DCC00601A40 /* GameScene.sks in Resources */,
 				822F87311D15783600601A40 /* Duck.wav in Resources */,
+				13210D57203ACAD9004C6CCC /* ObjectTiles.sks in Resources */,
 				8279E65B1D165CE500D08CAF /* Assets.xcassets in Resources */,
 				822F87331D15783E00601A40 /* License.rtf in Resources */,
 				822F87211D156DCC00601A40 /* LaunchScreen.storyboard in Resources */,

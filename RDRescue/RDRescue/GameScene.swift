@@ -42,12 +42,17 @@ class GameScene: SKScene {
   var car:SKSpriteNode!
     
   //Add the property for landBackground
-    var landBackground:SKTileMapNode!
+  var landBackground:SKTileMapNode!
+    
+  //New property object tiles Rubberduck and Gas Can
+    var objectsTileMap:SKTileMapNode!
 
   override func didMove(to view: SKView) {
     loadSceneNodes()
     physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
     maxSpeed = landMaxSpeed
+    //Call new method setupObjects()
+    setupObjects()
   }
   
   func loadSceneNodes() {
@@ -62,6 +67,56 @@ class GameScene: SKScene {
     self.landBackground = landBackground
   }
   
+    func setupObjects() {
+        let columns = 32
+        let rows = 24
+        let size = CGSize(width: 64, height: 64)
+        
+        // Take the tile set you created in ObjectTiles.sks
+        guard let tileSet = SKTileSet(named: "Object Tiles") else {
+            fatalError("Object Tiles Tile Set not found")
+        }
+        
+        // Create the new tile map node using the tile set
+        objectsTileMap = SKTileMapNode(tileSet: tileSet,
+                                       columns: columns,
+                                       rows: rows,
+                                       tileSize: size)
+        
+        // Add the tile map node to the scene hierarchy
+        addChild(objectsTileMap)
+        
+        // Retrieve the list of tile groups from the tile set.
+        let tileGroups = tileSet.tileGroups
+        
+        // Retrieve the tile definitions for the tiles from the tile groups array
+        guard let duckTile = tileGroups.first(where: {$0.name == "Duck"}) else {
+            fatalError("No Duck tile definition found")
+        }
+        guard let gascanTile = tileGroups.first(where: {$0.name == "Gas Can"}) else {
+            fatalError("No Gas Can tile definition found")
+        }
+        
+        // Set up the constant needed for placing the objects
+        let numberOfObjects = 64
+        
+        // Loop to place 64 objects
+        for _ in 1...numberOfObjects {
+            
+            // Randomly select a column and row
+            let column = Int(arc4random_uniform(UInt32(columns)))
+            let row = Int(arc4random_uniform(UInt32(rows)))
+            
+            let groundTile = landBackground.tileDefinition(atColumn: column, row: row)
+            
+            // If the tile selected is solid, select a gas can; otherwise select a duck
+            let tile = groundTile == nil ? duckTile : gascanTile
+            
+            // Place the duck or gas can in the tile, at the selected column and row
+            objectsTileMap.setTileGroup(tile, forColumn: column, row: row)
+        }
+    }
+    
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     guard let touch = touches.first else { return }
     targetLocation = touch.location(in: self)
