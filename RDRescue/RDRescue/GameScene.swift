@@ -46,6 +46,14 @@ class GameScene: SKScene {
     
   //New property object tiles Rubberduck and Gas Can
     var objectsTileMap:SKTileMapNode!
+    
+//Two actions to play the sounds when the objects are collected
+    lazy var duckSound:SKAction = {
+        return SKAction.playSoundFileNamed("Duck.wav", waitForCompletion: false)
+    }()
+    lazy var gascanSound:SKAction = {
+        return SKAction.playSoundFileNamed("Gas.wav", waitForCompletion: false)
+    }()
 
   override func didMove(to view: SKView) {
     loadSceneNodes()
@@ -143,6 +151,19 @@ class GameScene: SKScene {
         maxSpeed = landMaxSpeed
         print("grass")
     }
+    
+    let objectTile = objectsTileMap.tileDefinition(atColumn: column, row: row)
+    
+    if let _ = objectTile?.userData?.value(forKey: "gascan") {
+        run(gascanSound)
+        objectsTileMap.setTileGroup(nil, forColumn: column, row: row)
+    }
+    
+    if let _ = objectTile?.userData?.value(forKey: "duck") {
+        run(duckSound)
+        objectsTileMap.setTileGroup(nil, forColumn: column, row: row)
+    }
+
   }
   
   override func didSimulatePhysics() {
